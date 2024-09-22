@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movSpeed: 2
+  startingPosition: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}
 --- !u!212 &851943921
 SpriteRenderer:
   m_ObjectHideFlags: 0

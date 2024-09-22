@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private const string vertical = "Vertical";
     private const string lastHorizontal = "LastHorizontal";
     private const string lastVertical = "LastVertical";
+    public VectorValue startingPosition;
 
     Rigidbody2D rb;
 
@@ -25,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = rb.GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
