@@ -4466,6 +4466,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1417368682858438260, guid: b991e02662217db4ea9c2bf3392e5f57, type: 3}
     - target: {fileID: 4411430410186100361, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
+      propertyPath: sceneToLoad
+      value: SecondRoomScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411430410186100361, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
       propertyPath: fadeOutPanel
       value: 
       objectReference: {fileID: 5950891437571345865, guid: 900abbccac3ff90438d4b5348f26bad5, type: 3}
