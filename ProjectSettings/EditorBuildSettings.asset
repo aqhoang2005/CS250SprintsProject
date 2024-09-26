@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartRoomScene.unity
     guid: 1ca1dcba222fd614897484e632b5770e
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/SecondRoom.unity
+    guid: 8de6e88cadac51f4aa116b57373679a2
+>>>>>>> Stashed changes
   m_configObjects: {}
