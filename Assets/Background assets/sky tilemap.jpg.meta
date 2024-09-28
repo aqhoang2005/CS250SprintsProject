@@ -1,0 +1,677 @@
+fileFormatVersion: 2
+guid: 7adc5b0780ee11c4084c08cb009f5f25
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sky tilemap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 245.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b25127f3bf3f644a275f36b183d8f9
+      internalID: -659775808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 245.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0385704b91f3e8e478760f3f642590e8
+      internalID: -1462355604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 245.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b8cbbf3c0ac594fa604add46b82667
+      internalID: -235790716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 245.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcda66dfb71c2bf43a12855403f36de3
+      internalID: 193158277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 245.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c300677396a094b4b998fced6be2cd88
+      internalID: 2069045572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe2e7b33479937459344e8eb22380ef
+      internalID: -256322322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_6
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 184.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d296bfbc469eda1449327ee9fb296e03
+      internalID: -1511226362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 184.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f2fd966db13f14a974e5230c003907
+      internalID: -301353693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 184.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd60b97ab48d90042b7c483354b773ee
+      internalID: -565271621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_9
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 184.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45a6ecd06463db4da02d847b22227cd
+      internalID: -111723555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235c9a25caf8d2c4a819485fa6025460
+      internalID: 1128012158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_11
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 123.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b996e15dbc15894c96b3587f8c292e6
+      internalID: 390363504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_12
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 123.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838d019ea2e094147be9fcf66e0ac4bc
+      internalID: -215564865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_13
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 123.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7a4bf6e5a10c64a9a2f1753f96bef8
+      internalID: 1871992336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_14
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 123.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661cfc898bf541e4888f878e11d3e992
+      internalID: -186991857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9b4736bcdbc884fb9f95c3a5b53162
+      internalID: 2035106354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_16
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 62.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b368a9886a9a9844eb55ae93b9cc8989
+      internalID: 19026148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_17
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 62.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3286803fcef268644bfede79dc99fd00
+      internalID: -823018350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_18
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 62.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6dc0e05bdae7ac438add33bf554b501
+      internalID: -508783289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_19
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 62.6
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75034a5c6ba7f743890d65a2b5e6067
+      internalID: 1896391999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5999985
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3089599fee623c642a48c442691dc0c7
+      internalID: 239555773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1.5999985
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfe97a43528a5d45bb39b0b686fb3fb
+      internalID: -230000224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_22
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1.5999985
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614ab891cf203a64bb65052152e1b2a5
+      internalID: 605303144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_23
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1.5999985
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4970933b941d9468c61d2111bdfcce
+      internalID: -547453238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky tilemap_24
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1.5999985
+        width: 94.8
+        height: 61.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b41d0e4680c2364495b404dc658c02f
+      internalID: 649436976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sky tilemap_0: -659775808
+      sky tilemap_1: -1462355604
+      sky tilemap_10: 1128012158
+      sky tilemap_11: 390363504
+      sky tilemap_12: -215564865
+      sky tilemap_13: 1871992336
+      sky tilemap_14: -186991857
+      sky tilemap_15: 2035106354
+      sky tilemap_16: 19026148
+      sky tilemap_17: -823018350
+      sky tilemap_18: -508783289
+      sky tilemap_19: 1896391999
+      sky tilemap_2: -235790716
+      sky tilemap_20: 239555773
+      sky tilemap_21: -230000224
+      sky tilemap_22: 605303144
+      sky tilemap_23: -547453238
+      sky tilemap_24: 649436976
+      sky tilemap_3: 193158277
+      sky tilemap_4: 2069045572
+      sky tilemap_5: -256322322
+      sky tilemap_6: -1511226362
+      sky tilemap_7: -301353693
+      sky tilemap_8: -565271621
+      sky tilemap_9: -111723555
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
