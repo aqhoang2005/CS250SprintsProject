@@ -42,7 +42,7 @@ public class BattleSystem : MonoBehaviour
         playerHud.SetHUD(playerUnit);
         enemyHud.SetHUD(enemyUnit);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
@@ -51,6 +51,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
         //damage enemy 
+        dialogueText.text = "That was SUPER effective!";
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
         enemyHud.SetHP(enemyUnit.currentHP);
 
@@ -72,9 +73,9 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(20);
+        playerUnit.Heal(10);
 
-        //playerHud.SetHUD(playerUnit.currentHP);
+        playerHud.SetHP(playerUnit.currentHP);
         dialogueText.text = "You feel renewed strength!";
 
         yield return new WaitForSeconds(2f);
@@ -85,7 +86,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        dialogueText.text = enemyUnit.name + "has attacked!";
+        dialogueText.text = enemyUnit.unitName + " has attacked!";
 
         yield return new WaitForSeconds(1f);
 
