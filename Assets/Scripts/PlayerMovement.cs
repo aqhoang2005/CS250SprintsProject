@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movSpeed = 5f;
+    [SerializeField] private float movSpeed = 10f;
     private Vector2 movement;
     private Animator animator;
 
