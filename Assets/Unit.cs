@@ -23,14 +23,4 @@ public class Unit : MonoBehaviour
             return false;
         }
     }
-
-    public void Heal(int amount)
-    {
-        currentHP += amount;
-
-        if (currentHP > maxHP)
-        {
-            currentHP = maxHP;
-        }
-    }
 }

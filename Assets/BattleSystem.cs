@@ -70,19 +70,6 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerHeal()
-    {
-        playerUnit.Heal(5);
-
-        playerHud.SetHP(playerUnit.currentHP);
-        dialogueText.text = "You feel renewed strength!";
-
-        yield return new WaitForSeconds(2f);
-
-        state = BattleState.ENEMYTURN;
-        StartCoroutine(EnemyTurn());
-    }
-
     IEnumerator EnemyTurn()
     {
         dialogueText.text = enemyUnit.name + "has attacked!";
@@ -130,15 +117,5 @@ public class BattleSystem : MonoBehaviour
         }
 
         StartCoroutine(PlayerAttack());
-    }
-
-    public void OnHealButton()
-    {
-        if (state != BattleState.PLAYERTURN)
-        {
-            return;
-        }
-
-        StartCoroutine(PlayerHeal());
     }
 }
