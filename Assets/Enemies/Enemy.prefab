@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Sandboy
   unitLevel: 2
-  damage: 15
+  damage: 10
   maxHP: 30
   currentHP: 30
 --- !u!1 &5189904409422152237

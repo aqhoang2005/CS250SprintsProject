@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a492bdebb6119db4fb07d6f9ca0e091d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Actual Player
+  unitName: Akeru
   unitLevel: 999
-  damage: 1
+  damage: 10
   maxHP: 25
-  currentHP: 20
+  currentHP: 25
