@@ -16,7 +16,8 @@ public class BattleSystem : MonoBehaviour
     public GameObject akeruHealButton;
     public GameObject attackButton;
     public GameObject akeruAttackButton;
-    public GameObject meleeButton; 
+    public GameObject meleeButton;
+    public GameObject akeruBlackMagic;
 
     public Transform playerBattleSystem;
     public Transform enemyBattleSystem;
@@ -63,6 +64,29 @@ public class BattleSystem : MonoBehaviour
     }
 
     IEnumerator PlayerAttack()
+    {
+        //damage enemy 
+        dialogueText.text = "That was SUPER effective!";
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        enemyHud.SetHP(enemyUnit.currentHP);
+
+        yield return new WaitForSeconds(2f);
+
+        //check if enemy is dead
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+        }
+        else
+        {
+            //Change state based on what happened
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
+    IEnumerator PlayerBlackMagic()
     {
         //damage enemy 
         dialogueText.text = "That was SUPER effective!";
@@ -167,8 +191,27 @@ public class BattleSystem : MonoBehaviour
         {
             StartCoroutine(PlayerAttack());
             meleeButton.SetActive(false);
+            attackButton.SetActive(true);
+            healButton.SetActive(true);
+            akeruTurn = false;
+        }
+    }
+
+    public void OnBlackMagicAttackButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
         }
 
+        if (akeruTurn == true)
+        {
+            StartCoroutine(PlayerAttack());
+            meleeButton.SetActive(false);
+            attackButton.SetActive(true);
+            healButton.SetActive(true);
+            akeruTurn = false;
+        }
     }
 
 
