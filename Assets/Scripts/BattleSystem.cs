@@ -89,8 +89,8 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerBlackMagic()
     {
         //damage enemy 
-        dialogueText.text = "That was SUPER effective!";
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        dialogueText.text = "Feel the power of the dark side!";
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage + 20);
         enemyHud.SetHP(enemyUnit.currentHP);
 
         yield return new WaitForSeconds(2f);
@@ -177,6 +177,7 @@ public class BattleSystem : MonoBehaviour
         }
         akeruAttackButton.SetActive(false);
         meleeButton.SetActive(true);
+        akeruBlackMagic.SetActive(true);
         akeruTurn = true;
     }
 
@@ -206,7 +207,8 @@ public class BattleSystem : MonoBehaviour
 
         if (akeruTurn == true)
         {
-            StartCoroutine(PlayerAttack());
+            StartCoroutine(PlayerBlackMagic());
+            akeruBlackMagic.SetActive(false);
             meleeButton.SetActive(false);
             attackButton.SetActive(true);
             healButton.SetActive(true);

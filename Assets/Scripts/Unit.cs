@@ -8,6 +8,7 @@ public class Unit : MonoBehaviour
     public int unitLevel;
 
     public int damage;
+    public int blackMagic;
     public int maxHP;
     public int currentHP;
 
