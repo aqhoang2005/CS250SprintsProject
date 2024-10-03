@@ -11,11 +11,20 @@ public class BattleSystem : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
 
+    //Button GameObject Variables
+    public GameObject healButton;
+    public GameObject akeruHealButton;
+    public GameObject attackButton;
+    public GameObject akeruAttackButton;
+    public GameObject meleeButton; 
+
     public Transform playerBattleSystem;
     public Transform enemyBattleSystem;
 
     public BattleHUD playerHud;
     public BattleHUD enemyHud;
+
+    private bool akeruTurn = false;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -26,6 +35,11 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+        attackButton.SetActive(true);
+        healButton.SetActive(true);
+        akeruHealButton.SetActive(false);
+        akeruAttackButton.SetActive(false);
+        meleeButton.SetActive(false);
         StartCoroutine(SetupBattle());
     }
 
@@ -125,15 +139,50 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
-       if(state != BattleState.PLAYERTURN)
+        healButton.SetActive(false);
+        akeruHealButton.SetActive(false);
+        attackButton.SetActive(false);
+        akeruAttackButton.SetActive(true);
+    }
+
+    public void OnAkeruAttackButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+        akeruAttackButton.SetActive(false);
+        meleeButton.SetActive(true);
+        akeruTurn = true;
+    }
+
+    public void OnMeleeAttackButton()
+    {
+        if (state != BattleState.PLAYERTURN)
         {
             return;
         }
 
-        StartCoroutine(PlayerAttack());
+        if (akeruTurn == true)
+        {
+            StartCoroutine(PlayerAttack());
+            meleeButton.SetActive(false);
+        }
+
     }
 
+
     public void OnHealButton()
+    {
+        healButton.SetActive(false);
+        akeruHealButton.SetActive(true);
+        attackButton.SetActive(false);
+        dialogueText.text = "Choose a party member to heal:";
+
+        //StartCoroutine(PlayerHeal());
+    }
+
+    public void OnHealAkeruButton()
     {
         if (state != BattleState.PLAYERTURN)
         {
@@ -141,5 +190,9 @@ public class BattleSystem : MonoBehaviour
         }
 
         StartCoroutine(PlayerHeal());
+        healButton.SetActive(true);
+        akeruHealButton.SetActive(false);
+        attackButton.SetActive(true);
+
     }
 }
