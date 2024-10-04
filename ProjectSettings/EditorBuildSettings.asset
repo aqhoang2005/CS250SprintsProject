@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondRoomScene.unity
     guid: 8de6e88cadac51f4aa116b57373679a2
+  - enabled: 1
+    path: Assets/Scenes/Scene 3.unity
+    guid: a24c8f15fee945d4ead955dc1dbff2a0
+  - enabled: 1
+    path: Assets/Scenes/Battale Scene #2.unity
+    guid: e06ec37a42dd01549b448fd28c6ddac5
   m_configObjects: {}
