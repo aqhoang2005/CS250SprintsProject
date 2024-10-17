@@ -4334,6 +4334,7 @@ GameObject:
   - component: {fileID: 901360793}
   - component: {fileID: 901360796}
   - component: {fileID: 901360797}
+  - component: {fileID: 901360798}
   m_Layer: 0
   m_Name: SandbagEnemy
   m_TagString: Untagged
@@ -4492,12 +4493,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80cdc4c01bad734da902f60a7339b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: SampleScene
+  sceneToLoad: Battale Scene #2
   playerPosition: {x: -3.15, y: -0.15}
   playerStorage: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}
   fadeInPanel: {fileID: 1417368682858438260, guid: b991e02662217db4ea9c2bf3392e5f57, type: 3}
   fadeOutPanel: {fileID: 5950891437571345865, guid: 900abbccac3ff90438d4b5348f26bad5, type: 3}
+  enemyCheck: {fileID: 901360792}
   fadeWait: 0.33
+--- !u!114 &901360798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901360792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ae0dd530c7fde47a8cec016c6c46de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 901360792}
 --- !u!1 &920190070
 GameObject:
   m_ObjectHideFlags: 0

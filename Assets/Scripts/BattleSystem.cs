@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
 public class BattleSystem : MonoBehaviour
@@ -27,8 +28,12 @@ public class BattleSystem : MonoBehaviour
 
     private bool akeruTurn = false;
 
+    public bool enemyDefeated = false;
+
     Unit playerUnit;
     Unit enemyUnit;
+
+    DeleteEnemy enemyMask;
 
     public Text dialogueText;
 
@@ -46,6 +51,8 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
+        enemyDefeated = false;
+
         GameObject playerGO = Instantiate(playerPrefab, playerBattleSystem);
         playerUnit = playerGO.GetComponent<Unit>();
 
@@ -149,6 +156,14 @@ public class BattleSystem : MonoBehaviour
         if(state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync("Battatle Scene #2");
+            enemyDefeated = true;
+
+            if(enemyDefeated == true)
+            {
+                enemyMask.enemy.SetActive(false);
+            }
 
         }
         else if(state == BattleState.LOST){

@@ -11,7 +11,15 @@ public class SceneTransition : MonoBehaviour
     public VectorValue playerStorage;
     public GameObject fadeInPanel; 
     public GameObject fadeOutPanel;
+    public GameObject enemyCheck;
     public float fadeWait;
+   // public bool enemyCurrentStateWin;
+
+    private void Start()
+    {
+        //enemyCheck.SetActive(true);
+       // enemyCurrentStateWin = false;
+    }
 
     private void Awake()
     {
@@ -43,7 +51,17 @@ public class SceneTransition : MonoBehaviour
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
         while (!asyncOperation.isDone)
         {
+           // enemyCheck.SetActive(false);
+           // enemyCurrentStateWin = true;
             yield return null;
         }
+    }
+
+    private void Update()
+    {
+       // if (enemyCurrentStateWin == true)
+       // {
+           // enemyCheck.SetActive(false);
+       // }
     }
 }
