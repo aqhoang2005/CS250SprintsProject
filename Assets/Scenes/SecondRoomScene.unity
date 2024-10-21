@@ -12359,6 +12359,14 @@ PrefabInstance:
       propertyPath: playerStorage
       value: 
       objectReference: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}
+    - target: {fileID: 4411430410186100361, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
+      propertyPath: playerPosition.x
+      value: 7.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411430410186100361, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
+      propertyPath: playerPosition.y
+      value: -4.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6212788396635316004, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -12651,6 +12659,14 @@ PrefabInstance:
       propertyPath: playerStorage
       value: 
       objectReference: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}
+    - target: {fileID: 4411430410186100361, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
+      propertyPath: playerPosition.x
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411430410186100361, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
+      propertyPath: playerPosition.y
+      value: 3.89
+      objectReference: {fileID: 0}
     - target: {fileID: 6212788396635316004, guid: 81289739368c997448de97b2dd42dcdb, type: 3}
       propertyPath: m_IsTrigger
       value: 1
