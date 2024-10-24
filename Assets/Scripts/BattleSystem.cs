@@ -59,8 +59,9 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleSystem);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
-        dialogueText.text = "A wild " + enemyUnit.unitName + " approaches..."; 
-        
+        dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+
+
         playerHud.SetHUD(playerUnit);
         enemyHud.SetHUD(enemyUnit);
 
@@ -156,13 +157,14 @@ public class BattleSystem : MonoBehaviour
         if(state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
-            SceneManager.LoadScene(1, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync("Battatle Scene #2");
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync(4, UnloadSceneOptions.None);
             enemyDefeated = true;
 
             if(enemyDefeated == true)
             {
                 enemyMask.enemy.SetActive(false);
+                Destroy(enemyMask.enemy);
             }
 
         }
