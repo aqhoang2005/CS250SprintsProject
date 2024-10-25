@@ -26,6 +26,16 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD playerHud;
     public BattleHUD enemyHud;
 
+    GameManager gameManager;
+
+    public string sceneToChangeTo = GameManager.instance.prevScene;
+
+    public TransitionToBattle transitionToBattle;
+
+    public Vector3 lastPlayerposition;
+
+    public string lastScene;
+
     private bool akeruTurn = false;
 
     public bool enemyDefeated = false;
@@ -51,7 +61,10 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        enemyDefeated = false;
+       // enemyDefeated = false;
+
+        //Amount of enemies
+        //int enemyAmount
 
         GameObject playerGO = Instantiate(playerPrefab, playerBattleSystem);
         playerUnit = playerGO.GetComponent<Unit>();
@@ -152,14 +165,19 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+
     void EndBattle()
     {
         if(state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
-            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync(4, UnloadSceneOptions.None);
-            enemyDefeated = true;
+            //unloadScene();
+            //SceneManager.UnloadSceneAsync("Battale Scene #2");
+            //transitionToBattle.
+            SceneManager.LoadSceneAsync(sceneToChangeTo);
+
+            //enemyDefeated = true;
+            //gameManager
 
             if(enemyDefeated == true)
             {
