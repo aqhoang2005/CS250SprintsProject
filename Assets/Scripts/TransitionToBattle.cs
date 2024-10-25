@@ -1,4 +1,5 @@
-using System.Collections;
+
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -46,7 +47,7 @@ public class TransitionToBattle : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
+        if (other.CompareTag("Player") && other.CompareTag("Player"))
         {
             lastPlayerPosition = GameObject.Find("Player").gameObject.transform.position;
             //lastScene = SceneManager.GetActiveScene().name;
@@ -82,3 +83,4 @@ public class TransitionToBattle : MonoBehaviour
         // }
     }
 }
+*/

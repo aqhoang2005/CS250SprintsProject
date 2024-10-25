@@ -30,7 +30,7 @@ public class BattleSystem : MonoBehaviour
 
     public string sceneToChangeTo = GameManager.instance.prevScene;
 
-    public TransitionToBattle transitionToBattle;
+    //public TransitionToBattle transitionToBattle;
 
     public Vector3 lastPlayerposition;
 
