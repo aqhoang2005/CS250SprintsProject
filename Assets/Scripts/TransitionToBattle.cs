@@ -1,11 +1,12 @@
 
-/*using System.Collections;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TransitionToBattle : MonoBehaviour
 {
+
+    TransitionToBattle instance;
 
     public string sceneToLoad;
     public Vector2 playerPosition;
@@ -16,6 +17,10 @@ public class TransitionToBattle : MonoBehaviour
     public GameObject enemyCheck;
     public float fadeWait;
     public bool isNextScene = true;
+    public bool isEnemyTriggered = false;
+
+    public GameObject enemyHolder;
+
 
     public string lastScene;
 
@@ -33,6 +38,8 @@ public class TransitionToBattle : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
         if (fadeInPanel != null)
         {
             GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
@@ -47,11 +54,12 @@ public class TransitionToBattle : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             lastPlayerPosition = GameObject.Find("Player").gameObject.transform.position;
             //lastScene = SceneManager.GetActiveScene().name;
             playerStorage.initialValue = playerPosition;
+
             //sceneInfo.isNextScene = isNextScene;
             StartCoroutine(FadeCo());
             //SceneManager.LoadScene(sceneToLoad);
@@ -71,16 +79,18 @@ public class TransitionToBattle : MonoBehaviour
         {
             // enemyCheck.SetActive(false);
             // enemyCurrentStateWin = true;
+            isEnemyTriggered = true;
+            //StaticData.arguementToCheck = isEnemyTriggered;
             yield return null;
         }
     }
 
     private void Update()
     {
-        // if (enemyCurrentStateWin == true)
-        // {
-        // enemyCheck.SetActive(false);
-        // }
+        isEnemyTriggered = GiveToValue.myCondition;
+        if (isEnemyTriggered == true)
+        {
+            Destroy(enemyHolder);
+        }
     }
 }
-*/

@@ -14720,6 +14720,10 @@ MonoBehaviour:
   enemyBattleSystem: {fileID: 0}
   playerHud: {fileID: 1642797949}
   enemyHud: {fileID: 527984564}
+  sceneToChangeTo: 
+  lastPlayerposition: {x: 0, y: 0, z: 0}
+  lastScene: 
+  enemyDefeated: 0
   dialogueText: {fileID: 968518059}
 --- !u!4 &2107460616
 Transform:

@@ -53,32 +53,6 @@ public class GameManager : MonoBehaviour
         prevScene = sceneName;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && !other.isTrigger)
-        {
-            gotAttacked = true;
-            lastPlayerPosition = GameObject.Find("Player").gameObject.transform.position;
-            playerStorage.initialValue = playerPosition;
-        }
-    }
-
-    public IEnumerator FadeCo()
-    {
-        if (fadeOutPanel != null)
-        {
-            Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
-        }
-        yield return new WaitForSeconds(fadeWait);
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
-        while (!asyncOperation.isDone)
-        {
-            // enemyCheck.SetActive(false);
-            // enemyCurrentStateWin = true;
-            yield return null;
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -90,7 +64,6 @@ public class GameManager : MonoBehaviour
             case (GameStates.Overworld):
                 if (gotAttacked == true)
                 {
-                    StartCoroutine(FadeCo());
                     gameStates = GameStates.BattleGrounds;
                 }
 

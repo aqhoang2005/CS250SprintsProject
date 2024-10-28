@@ -130,7 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Akeru
-  unitLevel: 999
+  unitLevel: 1
   damage: 10
+  blackMagic: 0
   maxHP: 25
   currentHP: 25

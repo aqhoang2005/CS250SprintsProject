@@ -26,8 +26,6 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD playerHud;
     public BattleHUD enemyHud;
 
-    GameManager gameManager;
-
     public string sceneToChangeTo = GameManager.instance.prevScene;
 
     //public TransitionToBattle transitionToBattle;
@@ -61,7 +59,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-       // enemyDefeated = false;
+        enemyDefeated = false;
 
         //Amount of enemies
         //int enemyAmount
@@ -172,17 +170,18 @@ public class BattleSystem : MonoBehaviour
         {
             dialogueText.text = "You won the battle!";
             //unloadScene();
-            //SceneManager.UnloadSceneAsync("Battale Scene #2");
+            //SceneManager.UnloadSceneAsync("StartRoomScene");
             //transitionToBattle.
-            SceneManager.LoadSceneAsync(sceneToChangeTo);
+            //SceneManager.LoadSceneAsync(sceneToChangeTo);
 
-            //enemyDefeated = true;
+            enemyDefeated = true;
             //gameManager
 
             if(enemyDefeated == true)
             {
-                enemyMask.enemy.SetActive(false);
-                Destroy(enemyMask.enemy);
+                SceneManager.LoadSceneAsync(1);
+                //enemyMask.enemy.SetActive(false);
+                //Destroy(enemyMask.enemy);
             }
 
         }

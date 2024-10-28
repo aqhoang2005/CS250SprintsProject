@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private const string lastVertical = "LastVertical";
     public VectorValue startingPosition;
 
+    GameManager manager;
+
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -49,4 +51,5 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat(lastVertical, movement.y);
         }
     }
+
 }
