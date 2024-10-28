@@ -45,6 +45,8 @@ public class BattleSystem : MonoBehaviour
 
     public Text dialogueText;
 
+    public int levelNum = 1; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -227,6 +229,7 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(PlayerAttack());
             meleeButton.SetActive(false);
             attackButton.SetActive(true);
+            akeruBlackMagic.SetActive(false);
             healButton.SetActive(true);
             akeruTurn = false;
         }
