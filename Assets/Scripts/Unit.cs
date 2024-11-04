@@ -6,7 +6,9 @@ public class Unit : MonoBehaviour
 {
     public string unitName;
     public int unitLevel;
-
+   // public int currentExperience;
+    //public int maxExperience;
+    public int expToGive = 300;
     public int damage;
     public int blackMagic;
     public int maxHP;
@@ -33,4 +35,37 @@ public class Unit : MonoBehaviour
             currentHP = maxHP;
         }
     }
+
+    /*
+    private void OnEnable()
+    {
+        //Subscribe to the event
+        ExperienceManager.Instance.OnExperienceChanged += HandleExperienceChange;
+    }
+
+    private void OnDisable()
+    {
+        //Unsubscribe to the event
+        ExperienceManager.Instance.OnExperienceChanged -= HandleExperienceChange;
+    }
+
+    private void HandleExperienceChange(int newExperience)
+    {
+        currentExperience += newExperience;
+
+        if (currentExperience >= maxExperience) {
+            LevelUp();
+        }
+    }
+
+    private void LevelUp()
+    {
+        maxHP += 10;
+        currentHP = maxHP;
+
+        unitLevel ++;
+        currentExperience = 0;
+        maxExperience += 100;
+    }
+    */
 }

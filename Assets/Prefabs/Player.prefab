@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Akeru
   unitLevel: 1
+  currentExperience: 0
+  maxExperience: 300
   damage: 10
   blackMagic: 0
   maxHP: 25

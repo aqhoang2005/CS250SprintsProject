@@ -26,6 +26,8 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD playerHud;
     public BattleHUD enemyHud;
 
+    public Unit enemyExp;
+
     public string sceneToChangeTo = GameManager.instance.prevScene;
 
     //public TransitionToBattle transitionToBattle;
@@ -41,11 +43,14 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
+    ExperienceManager enemyManager;
+
     DeleteEnemy enemyMask;
 
     public Text dialogueText;
 
-    public int levelNum = 1; 
+    public int levelNum = 1;
+    public int expEarned = 300;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +61,7 @@ public class BattleSystem : MonoBehaviour
         akeruHealButton.SetActive(false);
         akeruAttackButton.SetActive(false);
         meleeButton.SetActive(false);
+        enemyManager = GameObject.Find("ExperienceManager").GetComponent<ExperienceManager>();
         StartCoroutine(SetupBattle());
     }
 
@@ -71,6 +77,12 @@ public class BattleSystem : MonoBehaviour
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleSystem);
         enemyUnit = enemyGO.GetComponent<Unit>();
+
+        //if (enemyUnit.unitName == "SandBoy")
+       // {
+        //    enemyManager.expToGive = 300;
+       //     expEarned = enemyManager.expToGive;
+       // }
 
         dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
 
@@ -119,6 +131,11 @@ public class BattleSystem : MonoBehaviour
         //check if enemy is dead
         if (isDead)
         {
+            
+
+            
+            //enemyManager.Instance.AddExperience(enemyExp.expToGive);
+            dialogueText.text = "You earned " + expEarned + "xp!";
             state = BattleState.WON;
             EndBattle();
         }
@@ -165,12 +182,20 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    IEnumerator WaitFor()
+    {
+        yield return new WaitForSeconds(2f);
+    }
 
+
+    //Function containing each condition for a battle to end
     void EndBattle()
     {
         if(state == BattleState.WON)
         {
+            ExperienceManager.Instance.AddExperience(expEarned);
             dialogueText.text = "You won the battle!";
+            //yield return new WaitForSeconds(2f);
             //unloadScene();
             //SceneManager.UnloadSceneAsync("StartRoomScene");
             //transitionToBattle.
@@ -192,11 +217,13 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    //Holds a variable for who is choosing an action
     void PlayerTurn()
     {
         dialogueText.text = "Choose an action: ";
     }
 
+    //Public function to enable the options for party members to attack
     public void OnAttackButton()
     {
         healButton.SetActive(false);
@@ -205,6 +232,7 @@ public class BattleSystem : MonoBehaviour
         akeruAttackButton.SetActive(true);
     }
 
+    //Public function to enable the Akeru's attack options
     public void OnAkeruAttackButton()
     {
         if (state != BattleState.PLAYERTURN)
@@ -217,6 +245,7 @@ public class BattleSystem : MonoBehaviour
         akeruTurn = true;
     }
 
+    //Public function enable the melee attack button
     public void OnMeleeAttackButton()
     {
         if (state != BattleState.PLAYERTURN)
@@ -235,6 +264,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    //Public function to enable the black magic button
     public void OnBlackMagicAttackButton()
     {
         if (state != BattleState.PLAYERTURN)
@@ -253,7 +283,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-
+    //Public function to enable the healing options
     public void OnHealButton()
     {
         healButton.SetActive(false);
@@ -264,6 +294,7 @@ public class BattleSystem : MonoBehaviour
         //StartCoroutine(PlayerHeal());
     }
 
+    //Public function to enable the heal button for Akeru
     public void OnHealAkeruButton()
     {
         if (state != BattleState.PLAYERTURN)

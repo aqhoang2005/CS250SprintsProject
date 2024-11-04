@@ -47,7 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Sandboy
   unitLevel: 2
+  currentExperience: 0
+  maxExperience: 0
+  expToGive: 300
   damage: 10
+  blackMagic: 0
   maxHP: 30
   currentHP: 30
 --- !u!1 &5189904409422152237
