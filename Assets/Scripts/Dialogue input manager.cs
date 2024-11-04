@@ -11,12 +11,49 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager1 : MonoBehaviour
 {
+    private Vector2 moveDirection = Vector2.zero;
+    private bool jumpPressed = false;
     private bool interactPressed = false;
+    private bool submitPressed = false;
 
     private static InputManager1 instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Found more than one Input Manager in the scene.");
+        }
+        instance = this;
+    }
+
     public static InputManager1 GetInstance()
     {
         return instance;
+    }
+
+    public void MovePressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            moveDirection = context.ReadValue<Vector2>();
+        }
+        else if (context.canceled)
+        {
+            moveDirection = context.ReadValue<Vector2>();
+        }
+    }
+
+    public void JumpPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            jumpPressed = true;
+        }
+        else if (context.canceled)
+        {
+            jumpPressed = false;
+        }
     }
 
     public void InteractButtonPressed(InputAction.CallbackContext context)
@@ -31,11 +68,51 @@ public class InputManager1 : MonoBehaviour
         }
     }
 
+    public void SubmitPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            submitPressed = true;
+        }
+        else if (context.canceled)
+        {
+            submitPressed = false;
+        }
+    }
+
+    public Vector2 GetMoveDirection()
+    {
+        return moveDirection;
+    }
+
+    // for any of the below 'Get' methods, if we're getting it then we're also using it,
+    // which means we should set it to false so that it can't be used again until actually
+    // pressed again.
+
+    public bool GetJumpPressed()
+    {
+        bool result = jumpPressed;
+        jumpPressed = false;
+        return result;
+    }
+
     public bool GetInteractPressed()
     {
         bool result = interactPressed;
         interactPressed = false;
         return result;
+    }
+
+    public bool GetSubmitPressed()
+    {
+        bool result = submitPressed;
+        submitPressed = false;
+        return result;
+    }
+
+    public void RegisterSubmitPressed()
+    {
+        submitPressed = false;
     }
 
 }
