@@ -15,8 +15,10 @@ public class InputManager1 : MonoBehaviour
     private bool jumpPressed = false;
     private bool interactPressed = false;
     private bool submitPressed = false;
+    private PlayerInput playerInput;
 
     private static InputManager1 instance;
+    private InputAction interactAction;
 
     private void Awake()
     {
@@ -25,6 +27,8 @@ public class InputManager1 : MonoBehaviour
             Debug.LogError("Found more than one Input Manager in the scene.");
         }
         instance = this;
+        playerInput = GetComponent<PlayerInput>();
+        interactAction = playerInput.actions["interact"];
     }
 
     public static InputManager1 GetInstance()

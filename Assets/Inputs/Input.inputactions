@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "InteractButtonPressed",
+                    "type": "Button",
+                    "id": "f2434b1f-b809-481c-acf8-0ec83f676176",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -180,6 +189,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "cb5c6ae2-d8f6-442d-8f3a-f5fbb50b7748",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InteractButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
