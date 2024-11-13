@@ -16,7 +16,7 @@ public class Dialoguemanger : MonoBehaviour
 
     private static Dialoguemanger instance;
 
-    private bool dialogueIsPlaying;
+    public bool dialogueIsPlaying { get; private set; }
 
     private void Awake()
     {
@@ -70,8 +70,10 @@ public class Dialoguemanger : MonoBehaviour
         //}
     }
 
-    private void ExitDialogueMode()
+    private IEnumerator ExitDialogueMode()
     {
+        yield return new WaitForSeconds(0.2f);
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -85,7 +87,7 @@ public class Dialoguemanger : MonoBehaviour
         }
         else
         {
-            ExitDialogueMode();
+            StartCoroutine(ExitDialogueMode());
         }
     }
 

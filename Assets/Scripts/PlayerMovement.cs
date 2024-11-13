@@ -38,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //this freezes player while in dialogue mode - jon
+        if (Dialoguemanger.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+
         movement.Set(InputManager.movement.x, InputManager.movement.y);
 
         rb.velocity = movement * movSpeed;

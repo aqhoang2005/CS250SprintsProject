@@ -11,7 +11,13 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
-    private bool playerInRange;
+    public bool playerInRange;
+    public static DialogueTrigger instance;
+
+    public static DialogueTrigger GetInstance()
+    {
+        return instance;
+    }
 
     private void Awake()
     {
@@ -21,13 +27,15 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange)
+        if (playerInRange && !Dialoguemanger.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
+
             if (InputManager1.GetInstance().GetInteractPressed())
             {
                 Dialoguemanger.GetInstance().EnterDialogueMode(inkJSON);
             }
+
         }
         else
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,9 +12,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager1 : MonoBehaviour
 {
-    private Vector2 moveDirection = Vector2.zero;
-    private bool jumpPressed = false;
-    private bool interactPressed = false;
+    public bool interactPressed = false;
     private bool submitPressed = false;
     private PlayerInput playerInput;
 
@@ -26,38 +25,30 @@ public class InputManager1 : MonoBehaviour
         {
             Debug.LogError("Found more than one Input Manager in the scene.");
         }
+
         instance = this;
+
         playerInput = GetComponent<PlayerInput>();
-        interactAction = playerInput.actions["interact"];
+        interactAction = playerInput.actions["InteractButtonPressed"];
+
+    }
+
+    private void Update()
+    {
+        if (interactAction.ReadValue<float>() == 1)
+        {
+            Debug.Log("its working");
+            interactPressed = true;
+        }
+        else
+        {
+            interactPressed = false;
+        }
     }
 
     public static InputManager1 GetInstance()
     {
         return instance;
-    }
-
-    public void MovePressed(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            moveDirection = context.ReadValue<Vector2>();
-        }
-        else if (context.canceled)
-        {
-            moveDirection = context.ReadValue<Vector2>();
-        }
-    }
-
-    public void JumpPressed(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            jumpPressed = true;
-        }
-        else if (context.canceled)
-        {
-            jumpPressed = false;
-        }
     }
 
     public void InteractButtonPressed(InputAction.CallbackContext context)
@@ -84,21 +75,9 @@ public class InputManager1 : MonoBehaviour
         }
     }
 
-    public Vector2 GetMoveDirection()
-    {
-        return moveDirection;
-    }
-
     // for any of the below 'Get' methods, if we're getting it then we're also using it,
     // which means we should set it to false so that it can't be used again until actually
     // pressed again.
-
-    public bool GetJumpPressed()
-    {
-        bool result = jumpPressed;
-        jumpPressed = false;
-        return result;
-    }
 
     public bool GetInteractPressed()
     {
