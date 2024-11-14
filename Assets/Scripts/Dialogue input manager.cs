@@ -18,6 +18,7 @@ public class InputManager1 : MonoBehaviour
 
     private static InputManager1 instance;
     private InputAction interactAction;
+    private InputAction submitAction;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class InputManager1 : MonoBehaviour
 
         playerInput = GetComponent<PlayerInput>();
         interactAction = playerInput.actions["InteractButtonPressed"];
+        submitAction = playerInput.actions["SubmitButtonPressed"];
 
     }
 
@@ -37,12 +39,20 @@ public class InputManager1 : MonoBehaviour
     {
         if (interactAction.ReadValue<float>() == 1)
         {
-            Debug.Log("its working");
             interactPressed = true;
         }
         else
         {
             interactPressed = false;
+        }
+
+        if (submitAction.ReadValue<float>() == 1)
+        {
+            submitPressed = true;
+        }
+        else
+        {
+            submitPressed = false;
         }
     }
 

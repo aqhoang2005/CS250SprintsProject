@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SubmitButtonPressed",
+                    "type": "Button",
+                    "id": "8615e6ee-e98a-426f-838e-ce8b69dd611d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -203,12 +212,21 @@
                 },
                 {
                     "name": "",
+<<<<<<< Updated upstream
                     "id": "cd335354-1f60-4846-8b43-77c54b2297fd",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "InteractButtonPressed",
+=======
+                    "id": "cb3dea71-6bd9-4c7f-830c-79960fa0d398",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SubmitButtonPressed",
+>>>>>>> Stashed changes
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
