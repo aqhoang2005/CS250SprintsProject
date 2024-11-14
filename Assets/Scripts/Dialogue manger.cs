@@ -1,7 +1,6 @@
-using Ink.Parsed;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;  
 using TMPro;
 using UnityEngine;
 using Ink.Runtime;
@@ -16,7 +15,7 @@ public class Dialoguemanger : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
-    private Ink.Runtime.Story currentStory;
+    private Story currentStory;
 
     private static Dialoguemanger instance;
 
@@ -60,7 +59,7 @@ public class Dialoguemanger : MonoBehaviour
             return;     
          }
 
-        if (InputManager1.GetInstance().GetSubmitPressed())
+        if (currentStory.currentChoices.Count == 0 && InputManager1.GetInstance().GetSubmitPressed())
         {
             ContinueStory();
         }
@@ -100,7 +99,7 @@ public class Dialoguemanger : MonoBehaviour
             // set text for the current dialogue line
             dialogueText.text = currentStory.Continue();
             // display choices, if any, for this dialogue line
-            //DisplayChoices();
+            DisplayChoices();
         }
         else
         {
@@ -108,33 +107,33 @@ public class Dialoguemanger : MonoBehaviour
         }
     }
 
-    //private void DisplayChoices()
-    //{
-    //    List<Choice> currentChoices = currentStory.currentChoices;
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
 
-    //    //defensive check to make sure UI can handle choices coming in
-    //    if (currentChoices.Count > choices.Length)
-    //    {
-    //        Debug.LogError("More choices were given than the UI can support. Number of choices given: " + currentChoices.Count);
-    //    }
+        //defensive check to make sure UI can handle choices coming in
+        if (currentChoices.Count > choices.Length)
+        {
+            Debug.LogError("More choices were given than the UI can support. Number of choices given: " + currentChoices.Count);
+        }
 
-    //    int index = 0;
-    //    // enable and initialize the choices up to the amount of choices for this line of dialogue
+        int index = 0;
+        // enable and initialize the choices up to the amount of choices for this line of dialogue
 
-    //    foreach (Choice choice in currentChoices)
-    //    {
-    //        choice[index].gameObject.SetActive(true);
-    //        choicesText[index].text = choice.text;
-    //        index++;
-    //    }
-    //    //go through the remaining choices the UI supports and make sure theyre hidden
-    //    for(int i = index; i < choices.Length; i++)
-    //    {
-    //        choices[i].gameObject.SetActive(false);
-    //    }
+        foreach (Choice choice in currentChoices)
+        {
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = choice.text;
+            index++;
+        }
+        //go through the remaining choices the UI supports and make sure theyre hidden
+        for (int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
 
-    //    StartCoroutine(SelectFirstChoice());    
-    //}
+        StartCoroutine(SelectFirstChoice());
+    }
 
     private IEnumerator SelectFirstChoice()
     {
@@ -148,6 +147,7 @@ public class Dialoguemanger : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+        InputManager1.GetInstance().RegisterSubmitPressed();
         ContinueStory();
     }
 }
