@@ -179,61 +179,107 @@ public class BattleSystem : MonoBehaviour
         RadNum = Random.Range(1, 5);
         Debug.Log(RadNum);
 
-        if (RadNum == 1 || RadNum == 4)
+        if (enemyUnit.currentHP >= 13)
         {
-            dialogueText.text = enemyUnit.unitName + " has attacked!";
-
-            yield return new WaitForSeconds(1f);
-
-            bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
-            playerHud.SetHP(playerUnit.currentHP);
-
-            yield return new WaitForSeconds(1f);
-            if (isDead)
+            if (RadNum == 1 || RadNum == 4)
             {
-                state = BattleState.LOST;
-                EndBattle();
+                dialogueText.text = enemyUnit.unitName + " has attacked!";
+
+                yield return new WaitForSeconds(1f);
+
+                bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+                playerHud.SetHP(playerUnit.currentHP);
+
+                yield return new WaitForSeconds(1f);
+                if (isDead)
+                {
+                    state = BattleState.LOST;
+                    EndBattle();
+                }
+                else
+                {
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                }
+            }
+            else if (RadNum == 2 || RadNum == 5)
+            {
+                dialogueText.text = enemyUnit.unitName + " has healed!";
+
+                yield return new WaitForSeconds(1f);
+
+                StartCoroutine(EnemyHeal());
+
+                yield return new WaitForSeconds(1f);
+
+                state = BattleState.PLAYERTURN;
+                PlayerTurn();
             }
             else
             {
-                state = BattleState.PLAYERTURN;
-                StartCoroutine(PlayerTurn());
+                dialogueText.text = enemyUnit.unitName + " has used magic!";
+
+                yield return new WaitForSeconds(1f);
+
+                bool isDead = playerUnit.TakeDamage(enemyUnit.damage + 7);
+                playerHud.SetHP(playerUnit.currentHP);
+
+                yield return new WaitForSeconds(1f);
+                if (isDead)
+                {
+                    state = BattleState.LOST;
+                    EndBattle();
+                }
+                else
+                {
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                }
             }
         }
-        else if(RadNum == 2 || RadNum == 5)
+        else if (enemyUnit.currentHP < 13)
         {
-            dialogueText.text = enemyUnit.unitName + " has healed!";
+            RadNum = Random.Range(1, 10);
+            Debug.Log(RadNum);
 
-            yield return new WaitForSeconds(1f);
-
-            StartCoroutine(EnemyHeal());
-
-            yield return new WaitForSeconds(1f);
-
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
-        }
-        else
-        {
-            dialogueText.text = enemyUnit.unitName + " has used magic!";
-
-            yield return new WaitForSeconds(1f);
-
-            bool isDead = playerUnit.TakeDamage(enemyUnit.damage + 7);
-            playerHud.SetHP(playerUnit.currentHP);
-
-            yield return new WaitForSeconds(1f);
-            if (isDead)
+            if (RadNum == 1 || RadNum == 2 || RadNum == 3 || RadNum == 5 || RadNum == 7 || RadNum == 9 || RadNum == 10)
             {
-                state = BattleState.LOST;
-                EndBattle();
+                dialogueText.text = enemyUnit.unitName + " has healed!";
+
+                yield return new WaitForSeconds(1f);
+
+                StartCoroutine(EnemyHeal());
+
+                yield return new WaitForSeconds(1f);
+
+                state = BattleState.PLAYERTURN;
+                PlayerTurn();
             }
             else
             {
-                state = BattleState.PLAYERTURN;
-                StartCoroutine(PlayerTurn());
+                dialogueText.text = enemyUnit.unitName + " has used magic!";
+
+                yield return new WaitForSeconds(1f);
+
+                bool isDead = playerUnit.TakeDamage(enemyUnit.damage + 7);
+                playerHud.SetHP(playerUnit.currentHP);
+
+                yield return new WaitForSeconds(1f);
+                if (isDead)
+                {
+                    state = BattleState.LOST;
+                    EndBattle();
+                }
+                else
+                {
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                }
             }
+
         }
+
+        
     }
 
     IEnumerator WaitFor()
