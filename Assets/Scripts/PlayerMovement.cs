@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //this freezes player while in dialogue mode - jon
+        //this freezes player while in dialogue mode -jon
         if (Dialoguemanger.GetInstance().dialogueIsPlaying)
         {
             return;
