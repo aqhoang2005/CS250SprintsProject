@@ -2,10 +2,8 @@
 
 
 === main ===
-Hey you...
-There is a toll for crossing this bridge.
-You owe me... 
-10 gold
+Hey you... There is a toll for crossing this bridge.
+You owe me... 10 gold
     * [Thats ridiculous]
         New end of the world policy. Pay the toll or get lost
         ** [Fine I'll pay the toll   -10 gold]

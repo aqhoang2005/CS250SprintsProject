@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"main"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"main":[["^You see an old sign and can barely make out the following words","\n","ev","str","^continue","/str","/ev",{"*":".^.c-0","flg":20},{"c-0":["\n","^left to blue kingdom","\n","^right to red kingdom","\n","end",{"#f":5}]}],{"#f":1}],"#f":1}],"listDefs":{}}

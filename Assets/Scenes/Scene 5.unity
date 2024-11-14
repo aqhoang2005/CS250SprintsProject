@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1411121145}
-  dialogueText: {fileID: 0}
+  dialogueText: {fileID: 686018445}
   choices: []
 --- !u!1 &97416342
 GameObject:
@@ -3275,6 +3275,7 @@ GameObject:
   - component: {fileID: 1005188262}
   - component: {fileID: 1005188261}
   - component: {fileID: 1005188260}
+  - component: {fileID: 1005188263}
   m_Layer: 0
   m_Name: INPUTMANAGER
   m_TagString: Untagged
@@ -3294,7 +3295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f2b5744356ec5b74aa587af553cb2b0b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 5c6e61b215946584dbf0b8ad01883a84, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -3309,7 +3310,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerMovement
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1005188261
@@ -3339,6 +3340,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005188263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005188259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e299f7389fd3934284a0915aec2e7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPressed: 0
 --- !u!1 &1025875746
 GameObject:
   m_ObjectHideFlags: 0
