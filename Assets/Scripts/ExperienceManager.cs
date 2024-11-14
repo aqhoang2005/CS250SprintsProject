@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ExperienceManager : MonoBehaviour
@@ -8,6 +10,7 @@ public class ExperienceManager : MonoBehaviour
 
     public delegate void ExperienceChangeHandler(int amount);
     public event ExperienceChangeHandler OnExperienceChanged;
+    //public static event Action<int> OnExperienceChanged;
 
     public int unitLevel;
     public int currentExperience;
@@ -17,13 +20,13 @@ public class ExperienceManager : MonoBehaviour
     //public int expToGive;
 
     Unit player;
-
+    BattleSystem battleSystem;
 
     //Use the awake function to check if the game object
     //is used once in a single scene
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        
         if (Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -56,16 +59,25 @@ public class ExperienceManager : MonoBehaviour
     {
         currentExperience += newExperience;
 
-        if (currentExperience >= maxExperience)
-        {
-            LevelUp();
-        }
+            //AddExperience(300);
+            // OnExperienceChanged(currentExperience);
+            if (currentExperience == 0)
+            {
+                Debug.Log("You gained xp");
+                LevelUp();
+            }
+            else
+            {
+                Debug.Log("Uh-uh-uh! This ain't working.");
+            }
     }
 
     private void LevelUp()
     {
         maxHealth += 10;
-        player.currentHP = player.maxHP;
+        //battleSystem.playerPrefab.
+        //player.currentHP = player.maxHP;
+        currentHealth += maxHealth;
 
         unitLevel++;
         currentExperience = 0;

@@ -200,6 +200,17 @@
                     "action": "InteractButtonPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd335354-1f60-4846-8b43-77c54b2297fd",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InteractButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -50,7 +50,8 @@ public class BattleSystem : MonoBehaviour
     public Text dialogueText;
 
     public int levelNum = 1;
-    public int expEarned = 300;
+    public int expEarned = 200;
+    public float RadNum = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +94,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         state = BattleState.PLAYERTURN;
-        PlayerTurn();
+        StartCoroutine(PlayerTurn());
     }
 
     IEnumerator PlayerAttack()
@@ -160,25 +161,78 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(EnemyTurn());
     }
 
+    IEnumerator EnemyHeal()
+    {
+        enemyUnit.Heal(10);
+
+        enemyHud.SetHP(enemyUnit.currentHP);
+        dialogueText.text = enemyUnit.unitName + " has regained strength! Beware...";
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.PLAYERTURN;
+        StartCoroutine(PlayerTurn());
+    }
+
     IEnumerator EnemyTurn()
     {
-        dialogueText.text = enemyUnit.unitName + " has attacked!";
+        RadNum = Random.Range(1, 5);
+        Debug.Log(RadNum);
 
-        yield return new WaitForSeconds(1f);
-
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage); 
-        playerHud.SetHP(playerUnit.currentHP);
-
-        yield return new WaitForSeconds(1f);
-        if (isDead)
+        if (RadNum == 1 || RadNum == 4)
         {
-            state = BattleState.LOST;
-            EndBattle();
+            dialogueText.text = enemyUnit.unitName + " has attacked!";
+
+            yield return new WaitForSeconds(1f);
+
+            bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+            playerHud.SetHP(playerUnit.currentHP);
+
+            yield return new WaitForSeconds(1f);
+            if (isDead)
+            {
+                state = BattleState.LOST;
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.PLAYERTURN;
+                StartCoroutine(PlayerTurn());
+            }
+        }
+        else if(RadNum == 2 || RadNum == 5)
+        {
+            dialogueText.text = enemyUnit.unitName + " has healed!";
+
+            yield return new WaitForSeconds(1f);
+
+            StartCoroutine(EnemyHeal());
+
+            yield return new WaitForSeconds(1f);
+
+            state = BattleState.PLAYERTURN;
+            PlayerTurn();
         }
         else
         {
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
+            dialogueText.text = enemyUnit.unitName + " has used magic!";
+
+            yield return new WaitForSeconds(1f);
+
+            bool isDead = playerUnit.TakeDamage(enemyUnit.damage + 7);
+            playerHud.SetHP(playerUnit.currentHP);
+
+            yield return new WaitForSeconds(1f);
+            if (isDead)
+            {
+                state = BattleState.LOST;
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.PLAYERTURN;
+                StartCoroutine(PlayerTurn());
+            }
         }
     }
 
@@ -193,7 +247,7 @@ public class BattleSystem : MonoBehaviour
     {
         if(state == BattleState.WON)
         {
-            ExperienceManager.Instance.AddExperience(expEarned);
+           
             dialogueText.text = "You won the battle!";
             //yield return new WaitForSeconds(2f);
             //unloadScene();
@@ -206,6 +260,7 @@ public class BattleSystem : MonoBehaviour
 
             if(enemyDefeated == true)
             {
+                ExperienceManager.Instance.AddExperience(expEarned);
                 SceneManager.LoadSceneAsync(1);
                 //enemyMask.enemy.SetActive(false);
                 //Destroy(enemyMask.enemy);
@@ -214,13 +269,15 @@ public class BattleSystem : MonoBehaviour
         }
         else if(state == BattleState.LOST){
             dialogueText.text = "You were defeated!";
+            SceneManager.LoadSceneAsync("GameOver");
         }
     }
 
     //Holds a variable for who is choosing an action
-    void PlayerTurn()
+    IEnumerator PlayerTurn()
     {
         dialogueText.text = "Choose an action: ";
+        yield return new WaitForSeconds(2f);
     }
 
     //Public function to enable the options for party members to attack
