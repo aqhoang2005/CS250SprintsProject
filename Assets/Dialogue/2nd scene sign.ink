@@ -3,11 +3,10 @@
 
 === main ===
 
-You see an old sign and can barely make out the following words
-* [continue]
-    left to blue kingdom 
-    ** [continue]
-    right to red kingdom
+
+    To The Left Ye Shall See A Kingdom The Color Of The Sea
+    ** [   NEXT]
+    To Avoid The Flood, Go Right To A Kingdom The Color Of Blood
     -> END
 
     
