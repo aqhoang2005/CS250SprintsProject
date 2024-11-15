@@ -239,10 +239,10 @@ public class BattleSystem : MonoBehaviour
         }
         else if (enemyUnit.currentHP < 13)
         {
-            RadNum = Random.Range(1, 10);
+            RadNum = Random.Range(0, 5);
             Debug.Log(RadNum);
 
-            if (RadNum == 1 || RadNum == 2 || RadNum == 3 || RadNum == 5 || RadNum == 7 || RadNum == 9 || RadNum == 10)
+            if (RadNum == 1 || RadNum == 3 || RadNum == 5)
             {
                 dialogueText.text = enemyUnit.unitName + " has healed!";
 
@@ -254,6 +254,27 @@ public class BattleSystem : MonoBehaviour
 
                 state = BattleState.PLAYERTURN;
                 PlayerTurn();
+            }
+            else if (RadNum == 0 || RadNum == 2)
+            {
+                dialogueText.text = enemyUnit.unitName + " has attacked!";
+
+                yield return new WaitForSeconds(1f);
+
+                bool isDead = playerUnit.TakeDamage(enemyUnit.damage - 3);
+                playerHud.SetHP(playerUnit.currentHP);
+
+                yield return new WaitForSeconds(1f);
+                if (isDead)
+                {
+                    state = BattleState.LOST;
+                    EndBattle();
+                }
+                else
+                {
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                }
             }
             else
             {
