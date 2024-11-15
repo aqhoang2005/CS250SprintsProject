@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f2b5744356ec5b74aa587af553cb2b0b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 5c6e61b215946584dbf0b8ad01883a84, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerMovement
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &572049558
@@ -557,7 +557,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b91178725955547ab37afa18500bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInPanel: {fileID: 0}
+  fadeInPanel: {fileID: 5950891437571345865, guid: 900abbccac3ff90438d4b5348f26bad5, type: 3}
+  fadeOutPanel: {fileID: 1417368682858438260, guid: b991e02662217db4ea9c2bf3392e5f57, type: 3}
+  sceneToLoad: Battale Scene #2
+  sceneToLoad2: TitleScene
+  fadeWait: 0.33
 --- !u!1 &1694454984
 GameObject:
   m_ObjectHideFlags: 0
