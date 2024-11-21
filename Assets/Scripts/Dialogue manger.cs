@@ -19,6 +19,11 @@ public class Dialoguemanger : MonoBehaviour
 
     private static Dialoguemanger instance;
 
+    //portrait variables
+    private const string PORTRAIT_TAG = "portrait";
+    private const string LAYOUT_TAG = "layout";
+    [SerializeField] Animator portraitAnimator;
+
     public bool dialogueIsPlaying { get; private set; }
 
     private void Awake()
@@ -73,6 +78,10 @@ public class Dialoguemanger : MonoBehaviour
 
         ContinueStory();
 
+        //reset portrait / layout
+
+        portraitAnimator.Play("default");
+
         //if (currentStory.canContinue)
         //{
         //    dialogueText.text = currentStory.Continue();
@@ -100,11 +109,45 @@ public class Dialoguemanger : MonoBehaviour
             dialogueText.text = currentStory.Continue();
             // display choices, if any, for this dialogue line
             DisplayChoices();
+
+            HandleTags(currentStory.currentTags);
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
         }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        //loops through tags
+
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(':');
+
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be parsed appropriately " + tag);
+            }
+
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            //handle tag
+
+            switch(tagKey)
+            {
+                case PORTRAIT_TAG:
+                    portraitAnimator.Play(tagValue);
+                    break;
+                case LAYOUT_TAG:
+                    break;
+            }
+        }
+
+
+
     }
 
     private void DisplayChoices()

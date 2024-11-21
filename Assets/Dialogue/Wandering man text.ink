@@ -2,7 +2,7 @@
 
 
 === main ===
-What do you want? Can't you see im pondering here?
+    What do you want? Can't you see im pondering here? #portrait:Wizard
     + [Can I have some money]
         No you can't have any money, I spent my last coin at the casino betting on 17 black
         -> END
