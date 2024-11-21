@@ -2,7 +2,7 @@
 
 
 === main ===
-Hey you... There is a toll for crossing this bridge.
+Hey you... There is a toll for crossing this bridge. #portrait:bandit
 You owe me... 10 gold
     * [Thats ridiculous]
         New end of the world policy. Pay the toll or get lost
