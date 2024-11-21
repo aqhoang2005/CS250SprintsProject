@@ -328,7 +328,15 @@ public class BattleSystem : MonoBehaviour
             if(enemyDefeated == true)
             {
                 ExperienceManager.Instance.AddExperience(expEarned);
-                SceneManager.LoadSceneAsync(1);
+                if(enemyUnit.unitName == "Sandboy")
+                {
+                    SceneManager.LoadSceneAsync("StartRoomSceneNew");
+                }
+                if(enemyUnit.unitName == "Wolves")
+                {
+                    SceneManager.LoadSceneAsync("Scene 3 NEW");
+                }
+                //else if(enemyUnit.unitName == " ")
                 //enemyMask.enemy.SetActive(false);
                 //Destroy(enemyMask.enemy);
             }
@@ -341,7 +349,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     //Holds a variable for who is choosing an action
-    IEnumerator PlayerTurn()
+    public IEnumerator PlayerTurn()
     {
         dialogueText.text = "Choose an action: ";
         yield return new WaitForSeconds(2f);
