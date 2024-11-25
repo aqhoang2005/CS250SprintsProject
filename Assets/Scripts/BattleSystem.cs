@@ -26,7 +26,7 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD playerHud;
     public BattleHUD enemyHud;
 
-    public Unit enemyExp;
+    public Unit playerExp;
 
     public string sceneToChangeTo = GameManager.instance.prevScene;
 
@@ -80,12 +80,25 @@ public class BattleSystem : MonoBehaviour
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         //if (enemyUnit.unitName == "SandBoy")
-       // {
+        // {
         //    enemyManager.expToGive = 300;
-       //     expEarned = enemyManager.expToGive;
-       // }
+        //     expEarned = enemyManager.expToGive;
+        // }
 
-        dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+
+        if (enemyUnit.unitName == "Sandboy")
+        {
+            dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+        }
+        else if (enemyUnit.unitName == "Wolves")
+        {
+            dialogueText.text = "A hungry hungry " + enemyUnit.unitName + " things will get wild...";
+        }
+        else if (enemyUnit.unitName ==  "Thief") {
+            dialogueText.text = "A sneaky " + enemyUnit.unitName + " has got you cornered!";
+        }
+
+
 
 
         playerHud.SetHUD(playerUnit);
@@ -321,6 +334,7 @@ public class BattleSystem : MonoBehaviour
             //SceneManager.UnloadSceneAsync("StartRoomScene");
             //transitionToBattle.
             //SceneManager.LoadSceneAsync(sceneToChangeTo);
+
 
             enemyDefeated = true;
             //gameManager

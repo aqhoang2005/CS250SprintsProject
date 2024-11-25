@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+
+    ExperienceManager experienceManager;
     public string unitName;
     public int unitLevel;
    // public int currentExperience;
@@ -20,6 +22,7 @@ public class Unit : MonoBehaviour
 
         if (currentHP <= 0) {
             return true;
+            
         }
         else
         {
@@ -34,6 +37,12 @@ public class Unit : MonoBehaviour
         if (currentHP > maxHP) { 
             currentHP = maxHP;
         }
+    }
+
+    public IEnumerator UpdateExperience()
+    {
+        unitLevel = experienceManager.unitLevel;
+        yield return new WaitForSeconds(2f);
     }
 
     /*

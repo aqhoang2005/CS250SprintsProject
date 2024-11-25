@@ -12,7 +12,7 @@ public class ExperienceManager : MonoBehaviour
     public event ExperienceChangeHandler OnExperienceChanged;
     //public static event Action<int> OnExperienceChanged;
 
-    public int unitLevel;
+    public int unitLevel = 1;
     public int currentExperience;
     public int maxExperience;
     public int maxHealth;
@@ -35,6 +35,11 @@ public class ExperienceManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public int getLevelNum()
+    {
+        return unitLevel;
     }
 
     public void AddExperience(int amount)
