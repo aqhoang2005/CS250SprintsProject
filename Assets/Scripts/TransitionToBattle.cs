@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TransitionToBattle : MonoBehaviour
 {
-
+    //Made public to allow access from other scripts - jon
     public static TransitionToBattle instance;
 
     public string sceneToLoad;
@@ -67,6 +67,7 @@ public class TransitionToBattle : MonoBehaviour
         }
     }
 
+    //Added this method to trigger battle from other scripts - jon
     public void StartBattle()
     {
         StartCoroutine(FadeCo());

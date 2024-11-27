@@ -93,6 +93,11 @@ public class Dialoguemanger : MonoBehaviour
             {
                 TransitionToBattle.instance.StartBattle();
             }
+
+            if (tagKey == BATTLE_TAG && tagValue == "wolves")
+            {
+                TransitionToBattle.instance.StartBattle();
+            }
         }
 
     }
