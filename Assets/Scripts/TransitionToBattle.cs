@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TransitionToBattle : MonoBehaviour
 {
 
-    TransitionToBattle instance;
+    public static TransitionToBattle instance;
 
     public string sceneToLoad;
     public Vector2 playerPosition;
@@ -65,6 +65,11 @@ public class TransitionToBattle : MonoBehaviour
             //SceneManager.LoadScene(sceneToLoad);
 
         }
+    }
+
+    public void StartBattle()
+    {
+        StartCoroutine(FadeCo());
     }
 
     public IEnumerator FadeCo()

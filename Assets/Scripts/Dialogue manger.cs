@@ -20,6 +20,7 @@ public class Dialoguemanger : MonoBehaviour
     private static Dialoguemanger instance;
 
     //portrait variables
+    public const string BATTLE_TAG = "battle";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     [SerializeField] Animator portraitAnimator;
@@ -57,8 +58,12 @@ public class Dialoguemanger : MonoBehaviour
     }
 
     private void Update()
-    { 
-    
+    {
+        if (dialogueIsPlaying)
+        {
+            GetInstance().DialogueBattle(currentStory.currentTags);
+        }
+
         if (!dialogueIsPlaying)
          {
             return;     
@@ -70,7 +75,29 @@ public class Dialoguemanger : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+
+    //Checks if battle is initiated from dialogue
+    private void DialogueBattle(List<string> currentTags)
+    {
+        //loops through tags
+
+        foreach (string tag in currentTags)
+        {
+
+            string[] splitTag = tag.Split(':');
+
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            if (tagKey == BATTLE_TAG && tagValue == "bandit")
+            {
+                TransitionToBattle.instance.StartBattle();
+            }
+        }
+
+    }
+
+        public void EnterDialogueMode(TextAsset inkJSON)
     {
         currentStory = new Ink.Runtime.Story(inkJSON.text);
         dialogueIsPlaying = true;
@@ -145,9 +172,6 @@ public class Dialoguemanger : MonoBehaviour
                     break;
             }
         }
-
-
-
     }
 
     private void DisplayChoices()

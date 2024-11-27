@@ -1,3 +1,4 @@
+
 -> main
 
 
@@ -10,9 +11,11 @@ You owe me... 10 gold
         -> END
         ** [I'd rather die than pay 10 gold]
         Looks like we have a trouble maker here boys
+        #battle:bandit
         -> END
     * [I'd rather die than pay 10 gold]
         Looks like we have a trouble maker here boys
+        #battle:bandit
         -> END
     * [Is this even your bridge]
         No but we gotta make a livin somehow
@@ -21,4 +24,5 @@ You owe me... 10 gold
              -> END
             ** [I'd rather die than pay 10 gold]
             Looks like we have a trouble maker here boys
+            #battle:bandit
             -> END
