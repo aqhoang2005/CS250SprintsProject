@@ -11780,6 +11780,7 @@ GameObject:
   - component: {fileID: 1168681328}
   - component: {fileID: 1168681327}
   - component: {fileID: 1168681329}
+  - component: {fileID: 1168681330}
   m_Layer: 0
   m_Name: SlimeManBlue
   m_TagString: Untagged
@@ -11866,7 +11867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc7a161e8ae62c44a2ef2bbdfdaeeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: Battale Scene #2
   playerPosition: {x: 0, y: 0}
   lastPlayerPosition: {x: 0, y: 0}
   playerStorage: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}
@@ -11878,6 +11879,41 @@ MonoBehaviour:
   isEnemyTriggered: 0
   enemyHolder: {fileID: 0}
   lastScene: 
+--- !u!58 &1168681330
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168681326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.44791666
 --- !u!1 &1183386901
 GameObject:
   m_ObjectHideFlags: 0

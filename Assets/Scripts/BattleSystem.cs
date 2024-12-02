@@ -28,7 +28,7 @@ public class BattleSystem : MonoBehaviour
 
     public Unit playerExp;
 
-    public string sceneToChangeTo = GameManager.instance.prevScene;
+    //public string sceneToChangeTo = GameManager.instance.prevScene;
 
     //public TransitionToBattle transitionToBattle;
 
