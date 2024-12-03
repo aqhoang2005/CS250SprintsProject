@@ -19,6 +19,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject akeruAttackButton;
     public GameObject meleeButton;
     public GameObject akeruBlackMagic;
+    public GameObject akeruSword; 
 
     public Transform playerBattleSystem;
     public Transform enemyBattleSystem;
@@ -61,6 +62,7 @@ public class BattleSystem : MonoBehaviour
         healButton.SetActive(true);
         akeruHealButton.SetActive(false);
         akeruAttackButton.SetActive(false);
+        akeruSword.SetActive(false);
         meleeButton.SetActive(false);
         enemyManager = GameObject.Find("ExperienceManager").GetComponent<ExperienceManager>();
         StartCoroutine(SetupBattle());
@@ -133,6 +135,29 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    IEnumerator PlayerSwordAttack()
+    {
+        //damage enemy 
+        dialogueText.text = "Sword slash engaged!";
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage + 13);
+        enemyHud.SetHP(enemyUnit.currentHP);
+
+        yield return new WaitForSeconds(2f);
+
+        //check if enemy is dead
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+        }
+        else
+        {
+            //Change state based on what happened
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
     IEnumerator PlayerBlackMagic()
     {
         //damage enemy 
@@ -159,7 +184,7 @@ public class BattleSystem : MonoBehaviour
             if(RadNum == 1 || RadNum == 3)
             {
                 dialogueText.text = "You got a 1 More!";
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(2f);
                 state = BattleState.PLAYERTURN;
                 StartCoroutine(PlayerTurn());
             }
@@ -398,6 +423,7 @@ public class BattleSystem : MonoBehaviour
         }
         akeruAttackButton.SetActive(false);
         meleeButton.SetActive(true);
+        akeruSword.SetActive(true);
         akeruBlackMagic.SetActive(true);
         akeruTurn = true;
     }
@@ -415,6 +441,7 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(PlayerAttack());
             meleeButton.SetActive(false);
             attackButton.SetActive(true);
+            akeruSword.SetActive(false);
             akeruBlackMagic.SetActive(false);
             healButton.SetActive(true);
             akeruTurn = false;
@@ -432,6 +459,26 @@ public class BattleSystem : MonoBehaviour
         if (akeruTurn == true)
         {
             StartCoroutine(PlayerBlackMagic());
+            akeruBlackMagic.SetActive(false);
+            meleeButton.SetActive(false);
+            akeruSword.SetActive(false);
+            attackButton.SetActive(true);
+            healButton.SetActive(true);
+            akeruTurn = false;
+        }
+    }
+
+
+    public void OnSwordAttackButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+
+        if (akeruTurn == true)
+        {
+            StartCoroutine(PlayerSwordAttack());
             akeruBlackMagic.SetActive(false);
             meleeButton.SetActive(false);
             attackButton.SetActive(true);
