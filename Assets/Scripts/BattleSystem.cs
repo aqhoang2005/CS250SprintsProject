@@ -139,6 +139,7 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "Feel the power of the dark side!";
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage + 20);
         enemyHud.SetHP(enemyUnit.currentHP);
+        RadNum = Random.Range(1, 4);
 
         yield return new WaitForSeconds(2f);
 
@@ -155,9 +156,19 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            //Change state based on what happened
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
+            if(RadNum == 1 || RadNum == 3)
+            {
+                dialogueText.text = "You got a 1 More!";
+                yield return new WaitForSeconds(3f);
+                state = BattleState.PLAYERTURN;
+                StartCoroutine(PlayerTurn());
+            }
+            else
+            {
+                //Change state based on what happened
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(EnemyTurn());
+            }
         }
     }
 
