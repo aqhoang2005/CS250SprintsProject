@@ -61,11 +61,12 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-       // if (enemyCurrentStateWin == true)
-       // {
-           // enemyCheck.SetActive(false);
-       // }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("StartRoomScene");
+        }
     }
 }

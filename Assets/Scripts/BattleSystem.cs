@@ -139,7 +139,7 @@ public class BattleSystem : MonoBehaviour
     {
         //damage enemy 
         dialogueText.text = "Sword slash engaged!";
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage + 13);
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage + 15);
         enemyHud.SetHP(enemyUnit.currentHP);
 
         yield return new WaitForSeconds(2f);

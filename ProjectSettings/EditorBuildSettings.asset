@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: a2f995ec6e5fd8140aecf637a5cc3a8d
   - enabled: 1
+    path: Assets/Scenes/Cutscene#1.unity
+    guid: f3a642939b1592645880bc2bfb7781ad
+  - enabled: 1
     path: Assets/Scenes/StartRoomScene.unity
     guid: 1ca1dcba222fd614897484e632b5770e
   - enabled: 1
@@ -44,7 +47,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle Scene city.unity
     guid: f0265c5c80a77e849a8e6fdece3e7f77
-  - enabled: 1
-    path: Assets/Scenes/Cutscene#1.unity
-    guid: f3a642939b1592645880bc2bfb7781ad
   m_configObjects: {}
