@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // This script acts as a single point for all other scripts to get
 // the current input from. It uses Unity's new Input System and
@@ -15,6 +16,9 @@ public class InputManager1 : MonoBehaviour
     public bool interactPressed = false;
     private bool submitPressed = false;
     private PlayerInput playerInput;
+
+    public GameObject cutsceneSlot;
+    public Scene currentScene = SceneManager.GetActiveScene();
 
     private static InputManager1 instance;
     private InputAction interactAction;
@@ -35,11 +39,17 @@ public class InputManager1 : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        cutsceneSlot.SetActive(false);
+    }
+
     private void Update()
     {
         if (interactAction.ReadValue<float>() == 1)
         {
             interactPressed = true;
+            cutsceneSlot.SetActive(true);
         }
         else
         {
