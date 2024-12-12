@@ -11787,7 +11787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1168681327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11867,7 +11867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc7a161e8ae62c44a2ef2bbdfdaeeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Battle Scene slime
+  sceneToLoad: Battale Scene #2
   playerPosition: {x: 0, y: 0}
   lastPlayerPosition: {x: 0, y: 0}
   playerStorage: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}

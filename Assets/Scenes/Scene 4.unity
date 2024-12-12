@@ -4773,7 +4773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc7a161e8ae62c44a2ef2bbdfdaeeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: BattleSceneWolves
+  sceneToLoad: Battle Scene city
   playerPosition: {x: 0, y: 0}
   lastPlayerPosition: {x: 0, y: 0}
   playerStorage: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}
@@ -8994,6 +8994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPressed: 0
+  cutsceneSlot: {fileID: 0}
+  currentScene:
+    m_Handle: 0
 --- !u!1 &1103215285
 GameObject:
   m_ObjectHideFlags: 0
