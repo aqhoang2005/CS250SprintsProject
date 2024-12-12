@@ -96,16 +96,21 @@ public class BattleSystem : MonoBehaviour
         {
             dialogueText.text = "A hungry hungry " + enemyUnit.unitName + " things will get wild...";
         }
-        else if (enemyUnit.unitName == "Thief") {
+        else if (enemyUnit.unitName == "Thief")
+        {
             dialogueText.text = "A sneaky " + enemyUnit.unitName + " has got you cornered!";
         }
         else if (enemyUnit.unitName == "Arke")
         {
             dialogueText.text = enemyUnit.unitName + ", ruler of the Blue Kingdom!";
         }
+        else if (enemyUnit.unitName == "Slime Monster")
+        {
+            dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+        }
         else
         {
-            dialogueText.text = "Challenger approaching..."; 
+            dialogueText.text = "Challenger approaching...";
         }
 
 
@@ -393,6 +398,10 @@ public class BattleSystem : MonoBehaviour
                 if(enemyUnit.unitName == "Wolves")
                 {
                     SceneManager.LoadSceneAsync("Scene 3 NEW");
+                }
+                if (enemyUnit.unitName == "Slime Monster")
+                {
+                    SceneManager.LoadSceneAsync("NoSlimeSecondRoomScene");
                 }
                 //else if(enemyUnit.unitName == " ")
                 //enemyMask.enemy.SetActive(false);
