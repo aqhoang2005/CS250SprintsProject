@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80cdc4c01bad734da902f60a7339b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: StartRoomScene
+  sceneToLoad: Scene 6
   playerPosition: {x: 0, y: 0}
   playerStorage: {fileID: 11400000, guid: 0089589ad0178614eafe1d957d9d7515, type: 2}
   fadeInPanel: {fileID: 1417368682858438260, guid: b991e02662217db4ea9c2bf3392e5f57, type: 3}

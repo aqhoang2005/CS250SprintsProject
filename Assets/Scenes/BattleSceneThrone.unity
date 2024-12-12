@@ -2956,6 +2956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1015694119}
+  - component: {fileID: 1015694120}
   m_Layer: 0
   m_Name: Walk in animation
   m_TagString: Untagged
@@ -2980,6 +2981,27 @@ Transform:
   - {fileID: 1167451106}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1015694120
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015694118}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 035083d425a77de44ad6cb3d48f67c69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1032370165
 GameObject:
   m_ObjectHideFlags: 0
@@ -28740,7 +28762,7 @@ GameObject:
   - component: {fileID: 1167451108}
   - component: {fileID: 1167451107}
   m_Layer: 0
-  m_Name: Thief Walk In
+  m_Name: Arke Walk In
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28771,7 +28793,7 @@ Animator:
   m_GameObject: {fileID: 1167451105}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dc0296659d50049428cb0686c07d8031, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e0fb059649fb064b8aebfae3844f579, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -28823,7 +28845,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1148767589, guid: 202e363da16c49042ad2c1a7fc0e4d77, type: 3}
+  m_Sprite: {fileID: 289354682, guid: 202e363da16c49042ad2c1a7fc0e4d77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -29042,6 +29064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299969214}
   - component: {fileID: 1299969213}
+  - component: {fileID: 1299969215}
   m_Layer: 0
   m_Name: BattleSystem
   m_TagString: Untagged
@@ -29063,7 +29086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   playerPrefab: {fileID: 5389130368189587379, guid: 86786da4364b288449401d2e55b9db37, type: 3}
-  enemyPrefab: {fileID: 8050462448634452541, guid: 0b186c91f3ed5754a975238fc7021628, type: 3}
+  enemyPrefab: {fileID: 1212465317700074778, guid: 4b024c9cc4752aa48b7dbd681f3e5c77, type: 3}
   healButton: {fileID: 664095611}
   akeruHealButton: {fileID: 1582969381}
   attackButton: {fileID: 853519514}
@@ -29098,6 +29121,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1299969215
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299969212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51e5787d795e1404eacd02717701e480, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1312821362
 GameObject:
   m_ObjectHideFlags: 0

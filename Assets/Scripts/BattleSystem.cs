@@ -385,7 +385,7 @@ public class BattleSystem : MonoBehaviour
 
             if(enemyDefeated == true)
             {
-                ExperienceManager.Instance.AddExperience(expEarned);
+                //ExperienceManager.Instance.AddExperience(expEarned);
                 if(enemyUnit.unitName == "Sandboy")
                 {
                     SceneManager.LoadSceneAsync("StartRoomSceneNew");
@@ -394,6 +394,11 @@ public class BattleSystem : MonoBehaviour
                 {
                     SceneManager.LoadSceneAsync("Scene 3 NEW");
                 }
+                if (enemyUnit.unitName == "Arke")
+                {
+                    SceneManager.LoadSceneAsync("Cutscene#3BlueVictory");
+                }
+
                 //else if(enemyUnit.unitName == " ")
                 //enemyMask.enemy.SetActive(false);
                 //Destroy(enemyMask.enemy);
@@ -489,6 +494,7 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(PlayerSwordAttack());
             akeruBlackMagic.SetActive(false);
             meleeButton.SetActive(false);
+            akeruSword.SetActive(false);
             attackButton.SetActive(true);
             healButton.SetActive(true);
             akeruTurn = false;
