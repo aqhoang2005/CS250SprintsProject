@@ -44,7 +44,7 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
-    ExperienceManager enemyManager;
+    //ExperienceManager enemyManager;
 
     DeleteEnemy enemyMask;
 
@@ -64,7 +64,7 @@ public class BattleSystem : MonoBehaviour
         akeruAttackButton.SetActive(false);
         akeruSword.SetActive(false);
         meleeButton.SetActive(false);
-        enemyManager = GameObject.Find("ExperienceManager").GetComponent<ExperienceManager>();
+       // enemyManager = GameObject.Find("ExperienceManager").GetComponent<ExperienceManager>();
         StartCoroutine(SetupBattle());
     }
 
@@ -96,8 +96,16 @@ public class BattleSystem : MonoBehaviour
         {
             dialogueText.text = "A hungry hungry " + enemyUnit.unitName + " things will get wild...";
         }
-        else if (enemyUnit.unitName ==  "Thief") {
+        else if (enemyUnit.unitName == "Thief") {
             dialogueText.text = "A sneaky " + enemyUnit.unitName + " has got you cornered!";
+        }
+        else if (enemyUnit.unitName == "Arke")
+        {
+            dialogueText.text = enemyUnit.unitName + ", ruler of the Blue Kingdom!";
+        }
+        else
+        {
+            dialogueText.text = "Challenger approaching..."; 
         }
 
 
