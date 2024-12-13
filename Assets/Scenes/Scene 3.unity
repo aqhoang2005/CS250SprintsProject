@@ -5627,6 +5627,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPressed: 0
+  cutsceneSlot: {fileID: 0}
+  currentScene:
+    m_Handle: 0
 --- !u!1 &1846908609
 GameObject:
   m_ObjectHideFlags: 0
