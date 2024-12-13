@@ -4656,7 +4656,7 @@ GameObject:
   - component: {fileID: 950355062}
   - component: {fileID: 950355063}
   m_Layer: 0
-  m_Name: Enemy walk in
+  m_Name: Slime walk in
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4739,7 +4739,7 @@ Animator:
   m_GameObject: {fileID: 950355060}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a1cbf8d8034e32049878aa15d1ea1696, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7c38e04bbf803514596eaa64c421d18c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
