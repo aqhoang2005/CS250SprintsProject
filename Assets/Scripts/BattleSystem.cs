@@ -432,6 +432,10 @@ public class BattleSystem : MonoBehaviour
                 {
                     SceneManager.LoadSceneAsync("Cutscene#3BlueVictory");
                 }
+                if(enemyUnit.unitName == "Soleil")
+                {
+                    SceneManager.LoadSceneAsync("Cutscene#5RedVictory");
+                }
                 if(enemyUnit.unitName == "Thief")
                 {
                     SceneManager.LoadSceneAsync("Scene 4 New");
