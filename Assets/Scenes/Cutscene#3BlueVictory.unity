@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 305574993}
   - component: {fileID: 305574992}
+  - component: {fileID: 305574994}
   m_Layer: 0
   m_Name: Video Player
   m_TagString: Untagged
@@ -190,6 +191,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &305574994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305574991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c8098196ecc784ca5020806a7aa4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: Scene 6
+  countDown: 61.5
+  fadeInPanel: {fileID: 1417368682858438260, guid: b991e02662217db4ea9c2bf3392e5f57, type: 3}
+  fadeOutPanel: {fileID: 5950891437571345865, guid: 900abbccac3ff90438d4b5348f26bad5, type: 3}
+  fadeWait: 0.33
 --- !u!1 &352177470
 GameObject:
   m_ObjectHideFlags: 0
