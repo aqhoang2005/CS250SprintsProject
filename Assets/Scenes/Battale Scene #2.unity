@@ -5544,9 +5544,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Melee
-
-'
+  m_Text: Special
 --- !u!222 &1152513716
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15071,6 +15069,7 @@ MonoBehaviour:
   meleeButton: {fileID: 2088162035}
   akeruBlackMagic: {fileID: 932604308}
   akeruSword: {fileID: 1415662493}
+  akeruSpecial: {fileID: 2141202713}
   playerBattleSystem: {fileID: 0}
   enemyBattleSystem: {fileID: 0}
   playerHud: {fileID: 1642797949}
@@ -15111,7 +15110,7 @@ GameObject:
   - component: {fileID: 2141202716}
   - component: {fileID: 2141202715}
   m_Layer: 5
-  m_Name: AkeruWhiteMagic
+  m_Name: AkeruSpecialAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15134,7 +15133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -245, y: -45}
+  m_AnchoredPosition: {x: -66.9, y: -45}
   m_SizeDelta: {x: 4.4155, y: 1.4156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141202715
@@ -15183,7 +15182,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2107460615}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnMeleeAttackButton
+        m_MethodName: OnAkeruSpecial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

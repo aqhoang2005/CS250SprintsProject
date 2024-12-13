@@ -19,7 +19,8 @@ public class BattleSystem : MonoBehaviour
     public GameObject akeruAttackButton;
     public GameObject meleeButton;
     public GameObject akeruBlackMagic;
-    public GameObject akeruSword; 
+    public GameObject akeruSword;
+    public GameObject akeruSpecial;
 
     public Transform playerBattleSystem;
     public Transform enemyBattleSystem;
@@ -39,6 +40,7 @@ public class BattleSystem : MonoBehaviour
     public static string lastScene;
 
     private bool akeruTurn = false;
+    private bool oneMore;
 
     public bool enemyDefeated = false;
 
@@ -58,6 +60,7 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        oneMore = false;
         state = BattleState.START;
         attackButton.SetActive(true);
         healButton.SetActive(true);
@@ -200,6 +203,7 @@ public class BattleSystem : MonoBehaviour
             {
                 dialogueText.text = "You got a 1 More!";
                 yield return new WaitForSeconds(2f);
+                oneMore = true;
                 state = BattleState.PLAYERTURN;
                 StartCoroutine(PlayerTurn());
             }
@@ -223,6 +227,29 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
+    }
+
+    IEnumerator PlayerInvincibility()
+    {
+        dialogueText.text = "Your special has made you invinvicble";
+
+        yield return new WaitForSeconds(1f);
+
+        bool isDead = playerUnit.TakeDamage(0);
+        playerHud.SetHP(playerUnit.currentHP);
+
+        yield return new WaitForSeconds(1f);
+        if (isDead)
+        {
+            state = BattleState.LOST;
+            EndBattle();
+        }
+        else
+        {
+            oneMore = false; 
+            state = BattleState.PLAYERTURN;
+            StartCoroutine(PlayerTurn());
+        }
     }
 
     IEnumerator EnemyHeal()
@@ -520,6 +547,9 @@ public class BattleSystem : MonoBehaviour
     {
         healButton.SetActive(false);
         akeruHealButton.SetActive(true);
+        if(oneMore == true){
+            akeruSpecial.SetActive(true);
+        }
         attackButton.SetActive(false);
         dialogueText.text = "Choose a party member to heal:";
 
@@ -539,5 +569,21 @@ public class BattleSystem : MonoBehaviour
         akeruHealButton.SetActive(false);
         attackButton.SetActive(true);
 
+    }
+
+    public void OnAkeruSpecial()
+    {
+       if(oneMore == true)
+        {
+            StartCoroutine(PlayerInvincibility());
+            akeruHealButton.SetActive(false);
+            akeruSpecial.SetActive(false);
+            attackButton.SetActive(true);
+            healButton.SetActive(true);
+        }
+        else
+        {
+            return;
+        }
     }
 }
