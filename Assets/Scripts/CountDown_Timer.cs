@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CountDown_Timer : MonoBehaviour
 {
     public string levelToLoad;
-    private float countDown = 110f;
+    public float countDown = 110f;
 
 
 

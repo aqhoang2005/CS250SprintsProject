@@ -40,7 +40,7 @@ public class SceneTransition : MonoBehaviour
             playerStorage.initialValue = playerPosition;
             //sceneInfo.isNextScene = isNextScene;
             StartCoroutine(FadeCo() );
-            //SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(sceneToLoad);
 
         }
     }
