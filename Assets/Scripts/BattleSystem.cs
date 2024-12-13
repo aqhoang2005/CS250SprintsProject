@@ -35,7 +35,8 @@ public class BattleSystem : MonoBehaviour
 
     public Vector3 lastPlayerposition;
 
-    public string lastScene;
+    public string currentScene;
+    public static string lastScene;
 
     private bool akeruTurn = false;
 
@@ -66,6 +67,7 @@ public class BattleSystem : MonoBehaviour
         meleeButton.SetActive(false);
        // enemyManager = GameObject.Find("ExperienceManager").GetComponent<ExperienceManager>();
         StartCoroutine(SetupBattle());
+        currentScene = SceneManager.GetActiveScene().name;
     }
 
     IEnumerator SetupBattle()
@@ -403,7 +405,10 @@ public class BattleSystem : MonoBehaviour
                 {
                     SceneManager.LoadSceneAsync("Cutscene#3BlueVictory");
                 }
-
+                if(enemyUnit.unitName == "Thief")
+                {
+                    SceneManager.LoadSceneAsync("Scene 4 New");
+                }
                 if (enemyUnit.unitName == "Slime Monster")
                 {
                     SceneManager.LoadSceneAsync("NoSlimeSecondRoomScene");

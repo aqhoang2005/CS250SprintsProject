@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NoSlimeSecondRoomScene.unity
     guid: 4e7f8d8fa1add2a448e29a667280007e
+  - enabled: 1
+    path: Assets/Scenes/Scene 4 New.unity
+    guid: b9509624b5db9084fbc53375e995018d
   m_configObjects: {}

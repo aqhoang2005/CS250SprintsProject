@@ -559,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeInPanel: {fileID: 5950891437571345865, guid: 900abbccac3ff90438d4b5348f26bad5, type: 3}
   fadeOutPanel: {fileID: 1417368682858438260, guid: b991e02662217db4ea9c2bf3392e5f57, type: 3}
-  sceneToLoad: Battale Scene #2
+  sceneToLoad: 
   sceneToLoad2: TitleScene
   fadeWait: 0.33
 --- !u!1 &1694454984

@@ -10,13 +10,20 @@ public class GameOver : MonoBehaviour
     public string sceneToLoad;
     public string sceneToLoad2;
     public float fadeWait;
+    BattleSystem battleSystem;
 
+    private void Start()
+    {
+        Debug.Log("Previous scene: " + SceneHolder.sceneHeld);
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //StartCoroutine(FadeCoContinue());
+            sceneToLoad = SceneHolder.sceneHeld;
             StartCoroutine(FadeCoContinue());
         }
         else if (Input.GetKeyDown(KeyCode.Q))

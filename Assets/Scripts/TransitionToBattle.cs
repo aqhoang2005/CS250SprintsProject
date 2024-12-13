@@ -47,10 +47,10 @@ public class TransitionToBattle : MonoBehaviour
         }
     }
 
-    public void SceneToLoadAfterBattle()
-    {
-        SceneManager.LoadScene(battleSystem.lastScene);
-    }
+   // public void SceneToLoadAfterBattle()
+    //{
+   //     SceneManager.LoadScene(battleSystem.lastScene);
+   // }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
