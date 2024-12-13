@@ -1619,7 +1619,7 @@ GameObject:
   - component: {fileID: 380679004}
   - component: {fileID: 380679003}
   m_Layer: 0
-  m_Name: Arke Walk In
+  m_Name: Soleil Walk In
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1650,7 +1650,7 @@ Animator:
   m_GameObject: {fileID: 380679001}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e0fb059649fb064b8aebfae3844f579, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3598c71bd4ca0754c960eff68e90d3f5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14327,7 +14327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   playerPrefab: {fileID: 5389130368189587379, guid: 86786da4364b288449401d2e55b9db37, type: 3}
-  enemyPrefab: {fileID: 1212465317700074778, guid: 4b024c9cc4752aa48b7dbd681f3e5c77, type: 3}
+  enemyPrefab: {fileID: 8234194475284127474, guid: 36fedf94d65e01a4e9d39cca748eb51e, type: 3}
   healButton: {fileID: 1906387139}
   akeruHealButton: {fileID: 27815516}
   attackButton: {fileID: 539233632}
