@@ -13537,6 +13537,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: BattleSceneThrone
+  countDown: 110
+  fadeInPanel: {fileID: 1417368682858438260, guid: b991e02662217db4ea9c2bf3392e5f57, type: 3}
+  fadeOutPanel: {fileID: 5950891437571345865, guid: 900abbccac3ff90438d4b5348f26bad5, type: 3}
+  fadeWait: 0.33
 --- !u!1 &720320465
 GameObject:
   m_ObjectHideFlags: 0
