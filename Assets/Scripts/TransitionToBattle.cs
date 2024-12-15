@@ -64,6 +64,8 @@ public class TransitionToBattle : MonoBehaviour
             StartCoroutine(FadeCo());
             //SceneManager.LoadScene(sceneToLoad);
 
+            overworldMusic.musicPlay.Stop(); //Stops overworld music from playing (WIP)
+
         }
     }
 
