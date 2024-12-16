@@ -1,0 +1,11 @@
+CONTROLS
+
+W - Up
+A - Left
+S - Down
+D - Right
+I - Interact
+
+COMBAT
+Click to choose options in combat.
+
