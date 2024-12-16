@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.SceneManagement;
-using UnityEditor.SearchService;
+/*using UnityEditor.SceneManagement;
+using UnityEditor.SearchService;*/
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public List <GameObject> enemiesInArea = new List <GameObject>();
 
-    public List<SceneAsset> scenes = new List<SceneAsset>();
+    //public List<SceneAsset> scenes = new List<SceneAsset>();
 
     private void Awake()
     {
